@@ -91,7 +91,7 @@ class VerticalStepperItem extends StatelessWidget {
           ),
         ],
       ),
-      const SizedBox(width: separatedWidth ?? 8),
+       SizedBox(width: separatedWidth ?? 8),
       Expanded(
         child: Column(
           crossAxisAlignment:

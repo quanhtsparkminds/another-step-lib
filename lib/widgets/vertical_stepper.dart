@@ -16,7 +16,9 @@ class VerticalStepperItem extends StatelessWidget {
       required this.inActiveBarColor,
       required this.barWidth,
       required this.iconHeight,
-      required this.iconWidth})
+      required this.iconWidth,
+      this.separatedWidth,
+      })
       : super(key: key);
 
   /// Stepper item of type [StepperData] to inflate stepper with data
@@ -52,6 +54,9 @@ class VerticalStepperItem extends StatelessWidget {
   /// Width of [StepperData.iconWidget]
   final double iconWidth;
 
+  /// Width of separated
+  final double? separatedWidth;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -86,7 +91,7 @@ class VerticalStepperItem extends StatelessWidget {
           ),
         ],
       ),
-      const SizedBox(width: 8),
+      const SizedBox(width: separatedWidth ?? 8),
       Expanded(
         child: Column(
           crossAxisAlignment:

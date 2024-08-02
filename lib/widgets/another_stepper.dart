@@ -22,6 +22,7 @@ class AnotherStepper extends StatelessWidget {
     this.scrollPhysics,
     this.iconHeight = 20,
     this.iconWidth = 20,
+    this.separatedWidth,
   })  : assert(verticalGap >= 0),
         super(key: key);
 
@@ -68,6 +69,9 @@ class AnotherStepper extends StatelessWidget {
 
   /// Scroll physics for listview if it is nested with some kind of Scrolling Widget
   final ScrollPhysics? scrollPhysics;
+
+  /// Width of separated
+  final double? separatedWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +121,7 @@ class AnotherStepper extends StatelessWidget {
         barWidth: barThickness,
         iconHeight: iconHeight,
         iconWidth: iconWidth,
+        separatedWidth: separatedWidth,
       );
     }
   }

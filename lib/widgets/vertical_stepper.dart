@@ -55,6 +55,7 @@ class VerticalStepperItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: isInverted ? getInvertedChildren() : getChildren(),
     );
   }
@@ -63,13 +64,11 @@ class VerticalStepperItem extends StatelessWidget {
     return [
       Column(
         children: [
-          Container(
-            color: index == 0
-                ? Colors.transparent
-                : (index <= activeIndex ? activeBarColor : inActiveBarColor),
-            width: barWidth,
-            height: gap,
-          ),
+          if (index != 0)
+            Container(
+              color: (index <= activeIndex ? activeBarColor : inActiveBarColor),
+              width: barWidth,
+            ),
           DotProvider(
             activeIndex: activeIndex,
             index: index,
